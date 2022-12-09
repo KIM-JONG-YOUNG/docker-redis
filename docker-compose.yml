@@ -13,9 +13,9 @@ services:
       - ./conf:/usr/local/conf
       - ./data:/data
     command: /usr/local/bin/redis-server /usr/local/conf/redis.conf
-    networks:
-      - backend
 
 networks:
-  backend:
-    driver: bridge
+  default:
+    name: redis_net
+    external: true
+      
